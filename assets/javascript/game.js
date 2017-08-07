@@ -1,16 +1,3 @@
-// 1. website decides on a word
-// 2. website displays _ for each letter of word
-// 3. user inputs letter
-// 4. website compares letter input with letters in word
-// 5. if letter is correct, _ is replaced with letter
-// 6. if letter is incorrect, incorrect letter is displayed and user loses a turn
-// 7. when word is solved, alert that user won
-// 8. website generates new word 
-
-
-// website decides on a word
-
-
 
 var word = [
 ["e", "l", "e", "p", "h", "a", "n", "t"],
@@ -55,8 +42,6 @@ document.onkeyup = function(){
 		}
 
 }
-
-
 
 	
 	//deletes the guessfield and replaces it with the new one
