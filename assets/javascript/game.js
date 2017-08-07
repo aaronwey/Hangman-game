@@ -49,7 +49,7 @@ document.onkeyup = function(){
 	guessField.innerHTML=""; 
 	printGuessWord();
 	
-	// if a guessed letter is not in the word, the letter will be put on the "wrong letters"-list and hangman grows
+	// if a guessed letter is not in the word, the letter will be put on the "wrong letters"-list 
 	if(!hit){
 		var wrongLetter = document.getElementById("wrongLetter");
 		var character = document.createTextNode(" " + userGuess);
