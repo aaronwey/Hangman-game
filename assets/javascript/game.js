@@ -20,7 +20,7 @@ var word = [
   ["o","t","t","e","r"],
   ["h","i","p","p","o","p","o","t","a","m","u","s"]
 ]
-var random = Math.floor((Math.random()*(word.length-1))); 
+var random = Math.floor((Math.random()*(word.length))); 
 
 var wordInRound = word[random]; // the word to guess will be chosen from the array above
 var guessWord = new Array(wordInRound.length);
@@ -41,18 +41,23 @@ function printGuessWord(){
 }
 
 //checks if the the letter provided by the user matches one or more of the letters in the word
-var letterCheck = function(){
-	var f = document.rateform; 
-	var b = f.elements["letterGuess"]; 
-	var userLetter = b.value; // the letter provided by the user
-	userLetter = userLetter.toLowerCase();
+
+document.onkeyup = function(){
+
+	var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
+
+	console.log(userGuess);
+
 	for (var i = 0; i < wordInRound.length; i++){
-		if(wordInRound[i] === userLetter){
-			guessWord[i] = userLetter + " ";
+		if(wordInRound[i] === userGuess){
+			guessWord[i] = userGuess + " ";
 			var hit = true;
 		}
-	b.value = "";
-	}
+
+}
+
+
+
 	
 	//deletes the guessfield and replaces it with the new one
 	var guessField = document.getElementById("guessField");
@@ -62,11 +67,10 @@ var letterCheck = function(){
 	// if a guessed letter is not in the word, the letter will be put on the "wrong letters"-list and hangman grows
 	if(!hit){
 		var wrongLetter = document.getElementById("wrongLetter");
-		var character = document.createTextNode(" " + userLetter);
+		var character = document.createTextNode(" " + userGuess);
 		wrongLetter.appendChild(character); 
 		mistake++;
-		var hangman = document.getElementById("hangman");
-    hangman.src = "http://www.writteninpencil.de/Projekte/Hangman/hangman" + mistake + ".png";
+
 	}
 	
 	//checks if all letters have been found
@@ -82,7 +86,7 @@ var letterCheck = function(){
 	
 	//once you got six wrong letters, you lose
 	if(mistake === 6){
-		window.alert("Uh...I guess you're dead now.");
+		window.alert("Now you're dead you dum dum!");
 	}
 }
 

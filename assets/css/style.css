@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Permanent+Marker);
 
 body {
-	background: url('http://www.writteninpencil.de/Projekte/Hangman/hangman-bg.png') fixed;
+	background-image: url(https://www.toptal.com/designers/subtlepatterns/patterns/circles-and-roundabouts.png);
 	text-align: center;
 	font-family: Helvetica, sans-serif;
 }
